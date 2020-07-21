@@ -12,6 +12,7 @@ import { AuthenticationComponent } from './authentication/authentication.compone
 import { ContactComponent } from './contact/contact.component';
 import { FaqComponent } from './faq/faq.component';
 import { StatusComponent } from './status/status.component';
+import { ProductDetailComponent } from './products/product-detail/product-detail.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { StatusComponent } from './status/status.component';
     AuthenticationComponent,
     ContactComponent,
     FaqComponent,
-    StatusComponent
+    StatusComponent,
+    ProductDetailComponent
   ],
   imports: [
     BrowserModule,

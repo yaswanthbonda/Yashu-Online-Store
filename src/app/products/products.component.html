@@ -1,1 +1,46 @@
-<p>products works!</p>
+<div class="container">
+  <div class="col-xs-12">
+    <div class="a-carousel-viewport"></div>
+    <ol class="a-carousel" role="list">
+    <li class="a-carousel-card" role="listitem" style="width: 400px; list-style-type: none;"
+      *ngFor="let productInForLoop of productsService.allCurrentProducts; let i = index">
+      <a
+        style="cursor: pointer;"
+        routerLinkActive="active"
+        class="list-group-item clearfix">
+        <div class="row" style="margin: 5px;">
+          <img
+          [src]="productInForLoop.imagePath"
+          alt="{{ productInForLoop.name }}"
+          class="img-responsive center-block"
+          style="max-height: 150px; text-align: center; background-color: rgb(208, 88, 245); padding: 5px;"
+        />
+        </div>
+        <div class="pull-left">
+          <h4 class="list-group-item-heading">{{ productInForLoop.name }}</h4>
+          <p class="list-group-item-text">Brand: {{ productInForLoop.brand }}</p>
+        </div>
+        <span class="pull-right">
+          <!-- <p class="list-group-item-text">MRP: {{ productInForLoop.mrp }}</p>
+          <p class="list-group-item-text">Discount: {{ productInForLoop.discountInRs ? productInForLoop.discountInRs+" Rs" : productInForLoop.discountInPercent+" %" }}</p>
+          <p class="list-group-item-text">Final Price: {{ productInForLoop.finalPrice }}</p> -->
+          <table>
+            <tr>
+              <td>MRP</td>
+              <td>: {{ productInForLoop.mrp }} Rs</td>
+            </tr>
+            <tr>
+              <td>Discount</td>
+              <td>: {{ productInForLoop.discountInRs ? productInForLoop.discountInRs+" Rs" : productInForLoop.discountInPercent+" %" }}</td>
+            </tr>
+            <tr>
+              <td>Final Price</td>
+              <td>: {{ productInForLoop.finalPrice }} Rs</td>
+            </tr>
+          </table>
+        </span>
+      </a>
+    </li>
+  </ol>
+  </div>
+</div>
