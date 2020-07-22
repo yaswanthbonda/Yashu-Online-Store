@@ -8,6 +8,7 @@ import { PRODUCTS } from './products-list';
 export class ProductsService {
 
   allCurrentProducts = PRODUCTS;
+  // private products = Products[];
   // validProducts = Products[];
   constructor() { }
 
@@ -28,5 +29,9 @@ export class ProductsService {
   ){
     let currentProducts = PRODUCTS;
     return currentProducts;
+  }
+
+  getProduct(index: number) {
+    return this.allCurrentProducts[index];
   }
 }

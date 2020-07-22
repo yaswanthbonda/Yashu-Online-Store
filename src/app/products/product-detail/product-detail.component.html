@@ -1,1 +1,22 @@
-<p>product-detail works!</p>
+<div class="container">
+  <div class="">
+    <div class="row">
+      <p>product-detail works!</p>
+
+      <div class="col-xs-12">
+        <img
+          [src]="productInForLoop.imagePath"
+          alt="{{ productInForLoop.name }}"
+          class="img-responsive"
+          style="max-height: 300px;"
+        />
+      </div>
+
+      <!-- <div class="row">
+        <div class="col-xs-12">
+          <h1>{{ product.name }}</h1>
+        </div>
+      </div> -->
+    </div>
+  </div>
+</div>

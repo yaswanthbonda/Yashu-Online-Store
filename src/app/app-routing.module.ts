@@ -8,10 +8,15 @@ import { AuthenticationComponent } from './authentication/authentication.compone
 import { ContactComponent } from './contact/contact.component';
 import { FaqComponent } from './faq/faq.component';
 import { StatusComponent } from './status/status.component';
+import { ProductDetailComponent } from './products/product-detail/product-detail.component';
 
 const appRoutes: Routes = [
     {path: '', redirectTo: '/products', pathMatch: 'full'},
-    {path: 'products', component: ProductsComponent },
+    {path: 'products', component: ProductsComponent, 
+      children:[
+        {path: '', component: ProductsComponent},
+        {path: ':id', component: ProductDetailComponent}
+      ]},
     {path: 'shopping-cart', component: ShoppingCartComponent },
     {path: 'authentication', component: AuthenticationComponent},
     {path: 'contact', component: ContactComponent },

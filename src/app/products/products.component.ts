@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {ProductsService} from './products.service';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-products',
@@ -9,7 +9,9 @@ import { Router } from '@angular/router';
 })
 export class ProductsComponent implements OnInit {
 
-  constructor(public productsService: ProductsService, private router: Router) { 
+  constructor(public productsService: ProductsService, 
+    private route: ActivatedRoute, 
+    private router: Router) { 
     console.log(this.productsService.allCurrentProducts);
   }
 
@@ -18,6 +20,10 @@ export class ProductsComponent implements OnInit {
 
   onGetProducts(){
 
+  }
+
+  goToProduct(i: number){
+    this.router.navigate([i], {relativeTo: this.route});
   }
 
 }
