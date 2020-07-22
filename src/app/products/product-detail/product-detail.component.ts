@@ -10,10 +10,11 @@ import { PRODUCTS } from '../products-list';
   styleUrls: ['./product-detail.component.css']
 })
 export class ProductDetailComponent implements OnInit {
-  prod = PRODUCTS;
-  productInForLoop : Products;
-  // product: Products;
   id: number;
+  // prod = PRODUCTS[1];
+  productDetail : Products = PRODUCTS[this.id];
+  // product: Products;
+  
 
   constructor(private productsService: ProductsService,
     private route: ActivatedRoute,
@@ -21,12 +22,15 @@ export class ProductDetailComponent implements OnInit {
 }
 
   ngOnInit() {
-    console.log("prod here: " + this.prod[1]);
+    // console.log("prod here: " + this.productDetail.name);
     this.route.params
       .subscribe(
         (params: Params) => {
-          this.id = +params['id'];
-          // this.prod = PRODUCTS[1];
+          // this.id = +params['id'];
+          this.id = +this.router.url.split('/').slice(-1)[0];
+          console.log("route params: " + this.router.url);
+          console.log("id here: " + this.id);
+          this.productDetail = PRODUCTS[this.id];
         }
       );
   }

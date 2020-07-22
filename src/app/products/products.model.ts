@@ -7,6 +7,8 @@ export class Products {
   public imagePath: string;
   public productUses: string;
   public sizes: Array<string>;
+  public colors: Array<string>;
+  public quantity: number;
   public mrp: number;
   public discountInRs: number;
   public discountInPercent: number;

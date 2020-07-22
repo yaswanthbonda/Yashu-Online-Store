@@ -13,8 +13,14 @@ import { ProductDetailComponent } from './products/product-detail/product-detail
 const appRoutes: Routes = [
     {path: '', redirectTo: '/products', pathMatch: 'full'},
     {path: 'products', component: ProductsComponent, 
-      children:[
-        {path: '', component: ProductsComponent},
+      // children:[
+      //   {path: '', component: ProductsComponent},
+      //   {path: ':id', component: ProductDetailComponent}
+      // ]
+    },
+    {path: 'product-detail', component: ProductDetailComponent, 
+    children:[
+        {path: '', component: ProductDetailComponent},
         {path: ':id', component: ProductDetailComponent}
       ]},
     {path: 'shopping-cart', component: ShoppingCartComponent },

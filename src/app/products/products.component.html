@@ -2,9 +2,9 @@
   <div class="col-xs-12 col-md-5">
     <div class="a-carousel-viewport"></div>
     <ol class="a-carousel" role="list">
-      (click)="goToProduct(productInForLoop)"
+      <!-- (click)="goToProduct(productInForLoop)"
+      [product]="productInForLoop" -->
     <li class="a-carousel-card" role="listitem" style="width: 400px; list-style-type: none;"
-      [product]="productInForLoop"
       (click)="goToProduct(i)"
       *ngFor="let productInForLoop of productsService.allCurrentProducts; let i = index">
       <a
@@ -47,8 +47,9 @@
   </ol>
   </div>
 
-  <div class="col-md-7">
+  <!-- <div class="col-md-7">
     <app-product-detail></app-product-detail>
-    <!-- <router-outlet></router-outlet> -->
-  </div>
+    
+  </div> -->
+  <!-- <router-outlet></router-outlet> -->
 </div>

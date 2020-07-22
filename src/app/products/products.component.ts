@@ -23,7 +23,9 @@ export class ProductsComponent implements OnInit {
   }
 
   goToProduct(i: number){
-    this.router.navigate([i], {relativeTo: this.route});
+    // let stringI = i.toString();
+    this.router.navigate(["product-detail", i]);
+    // this.router.navigate(["products", i]);
   }
 
 }
